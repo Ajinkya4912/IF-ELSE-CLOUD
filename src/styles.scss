@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.bg{
+    background-color: white;
+}
+@font-face {
+    font-family: poppins;
+    src: url(assets/fonts/Poppins/Poppins-Medium.ttf) format("opentype");
+}
+.ff-poppins {
+    font-family: poppins
+}
+*{
+    font-size:small;
+}

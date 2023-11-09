@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="scrol col-md-7">
+    <div class="bg p-4">
+      <div class="fw-bold mt-3">Recent Order</div>
+      <table class="table mx-1">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Products</th>
+            <th scope="col">Delivery Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Traking No#</th>
+            <th scope="col">Shopping</th>
+          </tr>
+        </thead>
+        <tbody class="font-weight-normal">
+          <tr *ngFor="let item of recent_Order; let i = index">
+            <th scope="row">{{ ("0" + (i + 1)).slice(-2) }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.product }}</td>
+            <td>
+              {{ item.delivery_date | date : "dd/MM/yyyy" }}
+            </td>
+            <td>
+              <div class="p-1 text-center rounded">
+                <button *ngIf="item.status == 'Paid'" class="btn btn-success">
+                  {{ item.status }}
+                </button>
+                <button
+                  *ngIf="item.status == 'Pending'"
+                  class="btn btn-secondary"
+                >
+                  {{ item.status }}
+                </button>
+                <button *ngIf="item.status == 'Failed'" class="btn btn-danger">
+                  {{ item.status }}
+                </button>
+              </div>
+            </td>
+            <td>{{ item.tracking_no }}</td>
+            <td>{{ item.shipping }}</td>
+            <td>X</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-5 scrol">
+    <div class="bg p-4">
+      <div class="fw-bold">New User Registeration</div>
+      <div class="container text-center mt-3 mx-1">
+        <div class="row mt-1" *ngFor="let item of newUser">
+          <div class="col-md-2">
+            <div>
+              <img
+                class="avtarIcon"
+                src="../../../assets/Images/avtar1.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="fs-6 fw-bold text-secondary">{{ item.name }}</div>
+            <div class="countryfs">{{ item.country }}</div>
+          </div>
+          <div class="col-md-4">
+            <div class="">
+              <div class="progress mt-3">
+                <progress
+                  id="file"
+                  value="{{ item.progress }}"
+                  max="100"
+                ></progress>
+                {{ item.progress }}%
+                <!-- <div
+                  class="progress-bar progress-bar-striped"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 75%"
+                >
+                  {{ item.progress }}
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 mt-2">
+            <button class="btn btn-primary px-2 py-0 fs-6">
+              {{ item.isActive }}
+            </button>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
