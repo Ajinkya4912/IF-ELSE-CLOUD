@@ -1,3 +1,10 @@
+# Screenshots
+
+![main](https://github.com/Ajinkya4912/IF-ELSE-CLOUD/assets/93428986/ddf7b94b-d53b-4b82-b019-dd034ab138aa)
+
+
+![large](https://github.com/Ajinkya4912/IF-ELSE-CLOUD/assets/93428986/9628a6bc-5c83-44d4-8771-9f15c9aee8ae)
+
 # IFELSECLOUD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
